@@ -266,6 +266,7 @@ DisablePwlCtrReq KEY_BDADDR="00:0e:9f:*" KEY_LMP_MFCT="10" KEY_LMP_VER="3:1958"
 #      KEY_BDADDR
 
 /* Ausdom M05 - unacceptably loud volume */
+/* LG Tone HV-800 - unacceptably loud volume */
 AvrcAbsVolBlacklist KEY_BDADDR="a0:e9:db:*"
 /* iKross IKBT83B HS - unacceptably loud volume */
 AvrcAbsVolBlacklist KEY_BDADDR="00:14:02:*"
@@ -274,11 +275,11 @@ AvrcAbsVolBlacklist KEY_BDADDR="1c:48:f9:*"
 /* JayBird BlueBuds X - low granularity on volume control */
 AvrcAbsVolBlacklist KEY_BDADDR="44:5e:f3:*"
 AvrcAbsVolBlacklist KEY_BDADDR="d4:9c:28:*"
+/* JayBird BlueBuds Freedom - low granularity on volume control */
+AvrcAbsVolBlacklist KEY_BDADDR="d4:4c:28:*"
 /* LG Tone HBS-730 - unacceptably loud volume */
 AvrcAbsVolBlacklist KEY_BDADDR="00:18:6b:*"
 AvrcAbsVolBlacklist KEY_BDADDR="b8:ad:3e:*"
-/* LG Tone HV-800 - unacceptably loud volume */
-AvrcAbsVolBlacklist KEY_BDADDR="a0:e9:db:*"
 /* Mpow Cheetah - unacceptably loud volume */
 AvrcAbsVolBlacklist KEY_BDADDR="00:11:b1:*"
 /* SOL REPUBLIC Tracks Air - unable to adjust volume back off from max */
@@ -292,6 +293,49 @@ AvrcAbsVolBlacklist KEY_BDADDR="90:03:b7:*"
 AvrcAbsVolBlacklist KEY_BDADDR="a8:b9:b3:*"
 /* Mi Bluetooth Speaker - unable to synchronize volume */
 AvrcAbsVolBlacklist KEY_BDADDR="e8:07:bf:*"
+AvrcAbsVolBlacklist KEY_BDADDR="b8:07:bf:*"
+/* Baskinrobbins - unable to synchronize volume */
+AvrcAbsVolBlacklist KEY_BDADDR="11:11:22:*"
+/* FOCUSPOWER-F10 - not enough granularity with volume */
+AvrcAbsVolBlacklist KEY_BDADDR="00:17:77:*"
+/* A33 - malfunction if register volume event */
+AvrcAbsVolBlacklist KEY_BDADDR="00:22:37:*"
+/* FENDA Swan - malfunction if register volume event */
+AvrcAbsVolBlacklist KEY_BDADDR="f0:13:c3:*"
+
+#---------------------------------------------------------------------
+# :: AVRC absolute volume fails for certain devices
+#
+#    AVAILABLE KEYS :
+#
+#      KEY_BDADDR
+#      KEY_NAME
+/* LG Tone HBS 810K - unacceptably loud volume */
+AvcBlacklistWithBdName KEY_BDADDR="00:00:00:*" KEY_NAME="HBS_810K"
+/* DiiFA ER700 - loud volume after reconnection*/
+AvcBlacklistWithBdName KEY_BDADDR="00:00:00:*" KEY_NAME="ER700"
+
+#---------------------------------------------------------------------
+# :: AVRC absolute volume fails for certain devices
+#
+#    AVAILABLE KEYS :
+#
+#      KEY_BDADDR
+#      KEY_LMP_MFCT
+#      KEY_LMP_VER
+/* JBL Charge - unable to control volume */
+AvcBlacklistWithBdMfctLmp KEY_BDADDR="00:1d:df:*" KEY_LMP_MFCT="10" KEY_LMP_VER="6:8648"
+/* WB50 - malfunction during avc */
+AvcBlacklistWithBdMfctLmp KEY_BDADDR="00:02:5b:*" KEY_LMP_MFCT="10" KEY_LMP_VER="6:8648"
+/* [Samsung] W_Audio - unable to control volume */
+AvcBlacklistWithBdMfctLmp KEY_BDADDR="f4:7b:5e:*" KEY_LMP_MFCT="10" KEY_LMP_VER="5:7856"
+/* BT-M1 LIGHT - malfunction during avc */
+/* Rowkin Mini M-B - malfunction during avc */
+AvcBlacklistWithBdMfctLmp KEY_BDADDR="00:23:01:*" KEY_LMP_MFCT="10" KEY_LMP_VER="6:8648"
+/* Scosche boomBOTTLE H2O - malfunction during avc */
+AvcBlacklistWithBdMfctLmp KEY_BDADDR="00:00:02:*" KEY_LMP_MFCT="10" KEY_LMP_VER="6:8648"
+/* [Samsung] W_Audio - malfunction during avc */
+AvcBlacklistWithBdMfctLmp KEY_BDADDR="78:ab:bb:*" KEY_LMP_MFCT="10" KEY_LMP_VER="5:7856"
 
 #---------------------------------------------------------------------
 # :: Initiate Av connect even when sdp fails
@@ -632,6 +676,8 @@ AvoidAvScalable KEY_NAME="BlueBuds_X"
 AvoidAvScalable KEY_NAME="Jaybird_X2"
 /* Plantronics BACKBEAT FIT */
 AvoidAvScalable KEY_NAME="PLT_BBFIT"
+/* Amazon Echo-XXX */
+AvoidAvScalable KEY_NAME="Echo-*"
 
 #---------------------------------------------------------------------
 # :: Feature enable / disable
@@ -737,10 +783,30 @@ NoDelayCIEVRINGinCarkit KEY_BDADDR="00:54:af:*" KEY_NAME="BT_RADIO"
 #         KEY_START_PROD_ID  : Range of Remote product id (start)
 #         KEY_END_PROD_ID    : Range of Remote product id (end)
 
-/* Level U (VID 117, PID 40976~40991) */
-AllowedScoSniffMode KEY_DID_VND_ID="117" KEY_START_PROD_ID="42241" KEY_END_PROD_ID="42250"
 /* Gear (VID 117, PID 42241~42250) */
+AllowedScoSniffMode KEY_DID_VND_ID="117" KEY_START_PROD_ID="42241" KEY_END_PROD_ID="42250"
+/* Level U (VID 117, PID 40976~40991) */
 AllowedScoSniffMode KEY_DID_VND_ID="117" KEY_START_PROD_ID="40976" KEY_END_PROD_ID="40991"
+
+#---------------------------------------------------------------------
+# :: Disable AAC codec
+#
+#    AVAILABLE KEYS :
+#
+#      KEY_BDADDR
+
+/* Volkswagen tiguan Smartpop RNS-KR3 SP3 */
+DisableAacCodec KEY_BDADDR="00:14:0A:*"
+
+#---------------------------------------------------------------------
+# :: Disable AAC codec with name
+#
+#    AVAILABLE KEYS :
+#
+#      KEY_BDADDR
+
+/* Spigen R12S */
+DisableAacCodecWithName KEY_NAME="Spigen_R12S"
 
 #---------------------------------------------------------------------
 # :: HFP END

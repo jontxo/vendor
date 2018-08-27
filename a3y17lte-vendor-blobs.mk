@@ -124,7 +124,7 @@ PRODUCT_COPY_FILES += \
 
 #==/ Mobicore /==#
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)app/FFFFFFFF000000000000000000000001.drbin:system/app/FFFFFFFF000000000000000000000001.drbin \
+    $(LOCAL_PATH)app/mcRegistry/FFFFFFFF000000000000000000000001.drbin:system/app/mcRegistry/FFFFFFFF000000000000000000000001.drbin \
     $(LOCAL_PATH)app/mcRegistry/00060308060501020000000000000000.tlbin:system/app/mcRegistry/00060308060501020000000000000000.tlbin \
     $(LOCAL_PATH)app/mcRegistry/07010000000000000000000000000000.tlbin:system/app/mcRegistry/07010000000000000000000000000000.tlbin \
     $(LOCAL_PATH)app/mcRegistry/07060000000000000000000000000000.tlbin:system/app/mcRegistry/07060000000000000000000000000000.tlbin \
@@ -143,9 +143,11 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)app/mcRegistry/ffffffff000000000000000000000019.tlbin:system/app/mcRegistry/ffffffff000000000000000000000019.tlbin \
     $(LOCAL_PATH)app/mcRegistry/ffffffff00000000000000000000001f.tlbin:system/app/mcRegistry/ffffffff00000000000000000000001f.tlbin \
     $(LOCAL_PATH)app/mcRegistry/ffffffff00000000000000000000002e.tlbin:system/app/mcRegistry/ffffffff00000000000000000000002e.tlbin \
+    $(LOCAL_PATH)app/mcRegistry/ffffffff00000000000000000000002f.tlbin:system/app/mcRegistry/ffffffff00000000000000000000002f.tlbin \
     $(LOCAL_PATH)app/mcRegistry/ffffffff000000000000000000000030.tlbin:system/app/mcRegistry/ffffffff000000000000000000000030.tlbin \
     $(LOCAL_PATH)app/mcRegistry/ffffffff000000000000000000000041.tlbin:system/app/mcRegistry/ffffffff000000000000000000000041.tlbin \
     $(LOCAL_PATH)app/mcRegistry/ffffffff000000000000000000000045.tlbin:system/app/mcRegistry/ffffffff000000000000000000000045.tlbin \
+    $(LOCAL_PATH)app/mcRegistry/ffffffff000000000000000000000073.tlbin:system/app/mcRegistry/ffffffff000000000000000000000073.tlbin \
     $(LOCAL_PATH)app/mcRegistry/ffffffffd00000000000000000000004.tlbin:system/app/mcRegistry/ffffffffd00000000000000000000004.tlbin \
     $(LOCAL_PATH)app/mcRegistry/ffffffffd0000000000000000000000a.tlbin:system/app/mcRegistry/ffffffffd0000000000000000000000a.tlbin \
     $(LOCAL_PATH)app/mcRegistry/ffffffffd0000000000000000000000e.tlbin:system/app/mcRegistry/ffffffffd0000000000000000000000e.tlbin \
@@ -185,7 +187,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)etc/sec_s3nrn80_rfreg.bin:system/etc/nfc/sec_s3nrn80_rfreg.bin \
     $(LOCAL_PATH)lib/hw/nfc_nci.universal7870.so:system/lib/hw/nfc_nci.universal7870.so \
     $(LOCAL_PATH)vendor/firmware/sec_s3nrn81_firmware.bin:system/vendor/firmware/nfc/sec_s3nrn81_firmware.bin \
-    $(LOCAL_PATH)vendor/firmware/sec_s3nrn80_firmware.bin:system/vendor/firmware/sec_s3nrn80_firmware.bin
+    $(LOCAL_PATH)vendor/firmware/sec_s3nrn80_firmware.bin:system/vendor/firmware/nfc/sec_s3nrn80_firmware.bin
 
 #==/ Shim Libs /==#
 PRODUCT_COPY_FILES += \
